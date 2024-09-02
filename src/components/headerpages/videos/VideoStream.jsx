@@ -3,6 +3,7 @@ import { BASE_URL } from "../../baseurl/BaseUrl";
 
 function VideoStream() {
     let { videoId } = useParams();
+    document.title = "Video Streaming"
     // console.log(videoId)
     return (
         <div>
@@ -10,7 +11,7 @@ function VideoStream() {
 
             <section className="flex justify-center mb-8">
                 <video
-                    style={{ width: "500px" }}
+                    style={{ width: "50rem" }}
                     src={`${BASE_URL}videos/${videoId}/stream`} controls></video>
             </section>
         </div>
