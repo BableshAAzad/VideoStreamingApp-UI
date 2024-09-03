@@ -24,7 +24,7 @@ function HomePage() {
     try {
       let response = await axios.get(`${BASE_URL}videos?page=${page}&size=6`);
       setProgress(90)
-      // console.log(response);
+      console.log(response);
       if (response.status === 200) {
         setVideos(response.data.data.content);
         setTotalResults(response.data.data.page.totalElements);
@@ -73,7 +73,7 @@ function HomePage() {
                 title={title}>
                 <div className="p-2">
                   <video
-                    src={`${BASE_URL}videos/${videoId}/stream`} controls></video>
+                    src={`${BASE_URL}videos/${videoId}/stream/range`} controls></video>
                   <h5 className="text-xl font-bold tracking-tight text-gray-700 dark:text-slate-300">
                     {title}
                   </h5>
