@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 import Spinner from "../spinner/Spinner"
 import HomePage from "../headerpages/HomePage";
-import ErrorPage from "../errorpage/ErrorPage"
 const VideoStream = React.lazy(() => import("../headerpages/videos/VideoStream"));
 const VideoUpload = React.lazy(() => import("../headerpages/VideoUpload"));
+const VideoPlayerPage = React.lazy(() => import("../headerpages/videos/VideoPlayerPage"));
+const ErrorPage = React.lazy(() => import("../errorpage/ErrorPage"));
+
 
 export const RouteComps = [
     {
@@ -35,6 +37,17 @@ export const RouteComps = [
             </Suspense>
         ),
         path: "video-stream/:videoId",
+        isPrivate: false,
+        isVisibleAfterLogin: true,
+        role: []
+    },
+    {
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <VideoPlayerPage />
+            </Suspense>
+        ),
+        path: "video-player-page/:videoId",
         isPrivate: false,
         isVisibleAfterLogin: true,
         role: []
