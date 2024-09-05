@@ -1,18 +1,18 @@
 @media only screen and (max-width: 1016px) {
     .responsive-margin-1016 {
-        padding-top: 1.5rem;
+        padding-top: 1.4rem;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .responsive-margin-768 {
-        padding-top: 0.2rem;
+        padding-top: 1.3rem;
     }
 }
 
 @media only screen and (max-width: 409px) {
     .responsive-margin-409 {
-        padding-top: 2.5rem;
+        padding-top: 1.2rem;
     }
 
     .responsive-margin {
@@ -20,8 +20,12 @@
     }
 }
 
-@media only screen and (max-width: 337px) {
-    .responsive-margin-337 {
-        padding-top: 3rem;
+@media only screen and (max-width: 340px) {
+    .responsive-margin-340 {
+        padding-top: 3.5rem;
     }
+}
+
+.logoColorAuth {
+    background-image: linear-gradient(to bottom right, rgba(83, 196, 240, 0.5), rgba(238, 86, 255, 0.4));
 }

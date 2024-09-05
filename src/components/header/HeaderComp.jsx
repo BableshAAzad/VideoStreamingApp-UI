@@ -17,7 +17,7 @@ function HeaderComp() {
 
     return (
         <>
-            <Navbar fluid className='bg-slate-300 dark:bg-gray-800 fixed w-full z-20 top-0 start-0 bg-opacity-75 dark:bg-opacity-70'>
+            <Navbar fluid className='bg-slate-300 dark:bg-gray-800 fixed w-full z-20 top-0 start-0 logoColor bg-opacity-75 dark:bg-opacity-70'>
                 <NavLink to='/' className='flex items-center navlogo'>
                     <img src={logo} alt="VideoStreamingApp" width="37" height="37" className="mr-1" title="VideoStreamingApp" />
                     <span className="self-center sitename dark:text-white text-xl font-semibold break-words md:whitespace-normal">Video Streaming App <NetworkStatus /> </span>

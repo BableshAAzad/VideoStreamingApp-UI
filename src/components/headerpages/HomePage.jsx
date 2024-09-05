@@ -8,6 +8,7 @@ import { AuthContext } from "../authprovider/AuthProvider"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Spinner from "../spinner/Spinner"
 import VideoPlayer from "./videos/VideoPlayer"
+import SidebarComp from "./sidebar/SidebarComp"
 
 function HomePage() {
   let [videos, setVideos] = useState([])
@@ -57,9 +58,11 @@ function HomePage() {
   return (
     <div>
       <section>
-        <h1 className='dark:text-lime-300 text-center text-2xl'>Home page</h1>
-        {isLoading && <Spinner />}
-        <InfiniteScroll
+        {/* <h1 className='dark:text-lime-300 text-lime-600 text-center text-2xl'>Home page</h1> */}
+        
+      </section>
+      <section>
+        {/* <InfiniteScroll
           dataLength={videos.length}
           next={fetchMoreVideos}
           hasMore={videos.length !== totalResults}
@@ -74,7 +77,7 @@ function HomePage() {
                   className="rounded-md m-2 w-72 cardShadowDark product-link overflow-auto"
                   title={title}>
                   <div className="p-2">
-                    {/* <video src={`${BASE_URL}videos/${videoId}/stream`} controls></video> */}
+                    <video src={`${BASE_URL}videos/${videoId}/stream`} controls></video>
                     <VideoPlayer url={`${BASE_URL}videos/${videoId}/master.m3u8`} />
                     <h5 className="text-xl font-bold tracking-tight text-gray-700 dark:text-slate-300">
                       {title}
@@ -86,7 +89,9 @@ function HomePage() {
                 </Link>
               }) : <img src={videoImage} alt="video_image" />}
           </section>
-        </InfiniteScroll>
+        </InfiniteScroll> */}
+        {isLoading && <Spinner />}
+        <SidebarComp videos={videos} />
       </section>
     </div>
   )
