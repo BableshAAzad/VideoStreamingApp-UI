@@ -1,8 +1,10 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import "./VideoPlayer.css"
+import { BASE_URL } from '../../baseurl/BaseUrl';
+import PropTypes from "prop-types";
 
-const VideoPlayer = ({ url }) => {
+const VideoPlayer = ({ videoId }) => {
   const [playing, setPlaying] = useState(false);
   const playerRef = useRef(null);
 
@@ -21,11 +23,11 @@ const VideoPlayer = ({ url }) => {
       style={{ position: 'relative', width: '100%', height: '100%' }}
     >
       <ReactPlayer
-        className="cardShadow rounded-lg"
+        className="rounded-lg"
         ref={playerRef}
-        url={url}
+        url={`${BASE_URL}videos/${videoId}/master.m3u8`}
         playing={playing}
-        controls={true} // You might want to hide controls for this feature
+        controls={true}
         width="100%"
         height="100%"
       />
@@ -34,3 +36,7 @@ const VideoPlayer = ({ url }) => {
 };
 
 export default VideoPlayer;
+
+VideoPlayer.propTypes = {
+  videoId: PropTypes.string.isRequired,
+};

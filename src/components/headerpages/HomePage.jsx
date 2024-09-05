@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom"
 import { BASE_URL } from "../baseurl/BaseUrl"
-import videoImage from "../../images/video_pluse2.png"
 import "./HomePage.css"
 import { useContext, useEffect, useState } from "react"
 import axios from "axios"
 import { AuthContext } from "../authprovider/AuthProvider"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Spinner from "../spinner/Spinner"
-import VideoPlayer from "./videos/VideoPlayer"
 import SidebarComp from "./sidebar/SidebarComp"
 
 function HomePage() {
@@ -56,44 +53,20 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <>
       <section>
-        {/* <h1 className='dark:text-lime-300 text-lime-600 text-center text-2xl'>Home page</h1> */}
-        
-      </section>
-      <section>
-        {/* <InfiniteScroll
+        {isLoading && <Spinner />}
+        <InfiniteScroll
           dataLength={videos.length}
           next={fetchMoreVideos}
           hasMore={videos.length !== totalResults}
           loader={<Spinner />}
           scrollableTarget="row"
         >
-          <section className="flex flex-wrap m-1 justify-around">
-            {videos.length > 0 ?
-              videos.map(({ videoId, title, description, contentType, filePath }) => {
-                return <Link to={`/video-player-page/${videoId}`}
-                  key={videoId}
-                  className="rounded-md m-2 w-72 cardShadowDark product-link overflow-auto"
-                  title={title}>
-                  <div className="p-2">
-                    <video src={`${BASE_URL}videos/${videoId}/stream`} controls></video>
-                    <VideoPlayer url={`${BASE_URL}videos/${videoId}/master.m3u8`} />
-                    <h5 className="text-xl font-bold tracking-tight text-gray-700 dark:text-slate-300">
-                      {title}
-                    </h5>
-                    <p className="text-sm text-gray-700 dark:text-gray-400">
-                      {description !== null ? description : "N/A"}
-                    </p>
-                  </div>
-                </Link>
-              }) : <img src={videoImage} alt="video_image" />}
-          </section>
-        </InfiniteScroll> */}
-        {isLoading && <Spinner />}
-        <SidebarComp videos={videos} />
+          <SidebarComp videos={videos} />
+        </InfiniteScroll>
       </section>
-    </div>
+    </>
   )
 }
 
