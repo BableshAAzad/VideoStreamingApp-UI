@@ -10,8 +10,8 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const updateResponsiveClass = () => {
-      if (window.innerWidth < 337) {
-        setResponsiveClass('responsive-margin-337');
+      if (window.innerWidth < 340) {
+        setResponsiveClass('responsive-margin-340');
       } else if (window.innerWidth < 409) {
         setResponsiveClass('responsive-margin-409');
       } else if (window.innerWidth < 768) {
@@ -36,7 +36,7 @@ function AuthProvider({ children }) {
       progress,
       setProgress
     }}>
-      <div className={`sm:pt-[1px] md:pt-[23px] lg:pt-[1px] ${responsiveClass} dark:bg-slate-900`}>
+      <div className={`sm:pt-[1px] md:pt-[23px] lg:pt-[1.3rem] mt-[-23px] ${responsiveClass} dark:bg-slate-900 logoColorAuth`}>
         {children}
       </div>
     </AuthContext.Provider>

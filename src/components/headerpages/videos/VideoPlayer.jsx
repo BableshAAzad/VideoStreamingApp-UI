@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ReactPlayer from 'react-player';
+import "./VideoPlayer.css"
 
 const VideoPlayer = ({ url }) => {
   const [playing, setPlaying] = useState(false);
@@ -20,6 +21,7 @@ const VideoPlayer = ({ url }) => {
       style={{ position: 'relative', width: '100%', height: '100%' }}
     >
       <ReactPlayer
+        className="cardShadow rounded-lg"
         ref={playerRef}
         url={url}
         playing={playing}
