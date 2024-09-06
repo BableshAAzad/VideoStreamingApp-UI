@@ -9,7 +9,7 @@ import SidebarComp from "./sidebar/SidebarComp"
 import { Helmet } from "react-helmet"
 
 function HomePage() {
-let [videos, setVideos] = useState([])
+  let [videos, setVideos] = useState([])
   let [page, setPage] = useState(0);
   let [totalResults, setTotalResults] = useState(0);
   let [isLoading, setIsLoading] = useState(true)

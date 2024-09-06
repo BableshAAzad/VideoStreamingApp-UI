@@ -1,10 +1,11 @@
 import { Footer } from "flowbite-react";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import "./FooterComp.css"
 
 function FooterComp() {
     return (
         <>
-            <Footer className="bg-slate-200">
+            <Footer className="logoColorFooter">
                 <div className="w-full">
                     <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
                         <div>
@@ -44,14 +45,14 @@ function FooterComp() {
                             </Footer.LinkGroup>
                         </div>
                     </div>
-                    <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
-                        <Footer.Copyright href="#" by="Ecommerce Shopping App™" year={2024} />
+                    <div className="w-full logoColorFooter px-4 py-6 sm:flex sm:items-center sm:justify-between">
+                        <Footer.Copyright className="text-slate-50 dark:text-slate-100" href="#" by="Video Streaming App™" year={2024} />
                         <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                            <Footer.Icon href="#" icon={BsFacebook} />
-                            <Footer.Icon href="#" icon={BsInstagram} />
-                            <Footer.Icon href="#" icon={BsTwitter} />
-                            <Footer.Icon href="#" icon={BsGithub} />
-                            <Footer.Icon href="#" icon={BsDribbble} />
+                            <Footer.Icon className="text-slate-50" href="#" icon={BsFacebook} />
+                            <Footer.Icon className="text-slate-50" href="#" icon={BsInstagram} />
+                            <Footer.Icon className="text-slate-50" href="#" icon={BsTwitter} />
+                            <Footer.Icon className="text-slate-50" href="#" icon={BsGithub} />
+                            <Footer.Icon className="text-slate-50" href="#" icon={BsDribbble} />
                         </div>
                     </div>
                 </div>

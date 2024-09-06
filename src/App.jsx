@@ -13,7 +13,8 @@ function App() {
     <div className="dark:bg-slate-900">
       <HeaderComp />
       <LoadingBar
-        color='#42a4f5'
+        color='#FF0000' 
+        // sky #42a4f5 
         progress={progress}
         height={3}
       />

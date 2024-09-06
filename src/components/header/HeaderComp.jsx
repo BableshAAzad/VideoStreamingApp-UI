@@ -1,4 +1,4 @@
-import { faSearch, faUser, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Navbar } from "flowbite-react";
 import DarkModeOption from "../darkmode/DarkModeOption";
@@ -6,6 +6,7 @@ import "./HeaderComp.css"
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../../images/logo.png"
 import NetworkStatus from "../network/NetworkStatus"
+import { RiVideoUploadFill } from "react-icons/ri";
 
 function HeaderComp() {
     const location = useLocation();
@@ -17,7 +18,7 @@ function HeaderComp() {
 
     return (
         <>
-            <Navbar fluid className='bg-slate-300 dark:bg-gray-800 fixed w-full z-20 top-0 start-0 bg-opacity-75 dark:bg-opacity-70'>
+            <Navbar fluid className='bg-slate-300 dark:bg-gray-800 fixed w-full z-20 top-0 start-0 logoColor bg-opacity-75 dark:bg-opacity-70'>
                 <NavLink to='/' className='flex items-center navlogo'>
                     <img src={logo} alt="VideoStreamingApp" width="37" height="37" className="mr-1" title="VideoStreamingApp" />
                     <span className="self-center sitename dark:text-white text-xl font-semibold break-words md:whitespace-normal">Video Streaming App <NetworkStatus /> </span>
@@ -40,14 +41,15 @@ function HeaderComp() {
                 </div>
                 <Navbar.Collapse className="md:order-2">
 
-                    <NavLink to="/video-upload" className="text-base">
+                    <NavLink to="/video-upload" className="text-base" title="create">
                         <Navbar.Link active={location.pathname === "/video-upload"} as="div">
-                            <FontAwesomeIcon icon={faVideo} />
+                            {/* <FontAwesomeIcon icon={faVideo} /> */}
+                            <RiVideoUploadFill className="text-2xl"/>
                         </Navbar.Link>
                     </NavLink>
 
-                    <NavLink to="/" className='text-base'>
-                        <Navbar.Link active={location.pathname === "/"} as="div">
+                    <NavLink to="/profile" className='text-base' title="profile">
+                        <Navbar.Link active={location.pathname === "/profile"} as="div">
                             <FontAwesomeIcon icon={faUser} /> Profile
                         </Navbar.Link>
                     </NavLink>
