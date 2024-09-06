@@ -7,9 +7,11 @@ import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../../images/logo.png"
 import NetworkStatus from "../network/NetworkStatus"
 import { RiVideoUploadFill } from "react-icons/ri";
+import { useState } from "react";
 
 function HeaderComp() {
     const location = useLocation();
+    const [openModal, setOpenModal] = useState(false);
 
     document.title = "Video Streaming App"
 
@@ -68,3 +70,4 @@ function HeaderComp() {
 }
 
 export default HeaderComp;
+// test commit 2

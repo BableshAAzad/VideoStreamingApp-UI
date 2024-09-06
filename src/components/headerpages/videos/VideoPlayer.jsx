@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import "./VideoPlayer.css"
-import { BASE_URL } from '../../baseurl/BaseUrl';
+import { BASE_URL } from '../../appconstants/BaseUrl';
 import PropTypes from "prop-types";
 
 const VideoPlayer = ({ videoId }) => {
