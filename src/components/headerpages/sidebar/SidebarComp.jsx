@@ -98,8 +98,8 @@ function SidebarComp({ videos }) {
 
 export default SidebarComp
 
-SidebarComp.propTypes = {
-    videos: PropTypes.array.isRequired,
-};
+// SidebarComp.propTypes = {
+//     videos: PropTypes.array.isRequired,
+// };
 
 
