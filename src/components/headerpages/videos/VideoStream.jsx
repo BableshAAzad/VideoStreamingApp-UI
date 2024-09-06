@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { BASE_URL } from "../../baseurl/BaseUrl";
+import { BASE_URL } from "../../appconstants/BaseUrl";
 
 function VideoStream() {
     let { videoId } = useParams();

@@ -2,9 +2,10 @@ import { Button, Card, Progress, Spinner } from "flowbite-react"
 import { useContext, useId, useState } from "react";
 import video_pluse from "../../images/video_pluse.png"
 import axios from "axios";
-import { BASE_URL } from "../baseurl/BaseUrl"
+import { BASE_URL } from "../appconstants/BaseUrl"
 import { AuthContext } from "../authprovider/AuthProvider";
 import { ModelAlert } from "../popup/ModelAlert";
+import { Helmet } from "react-helmet";
 
 function VideoUpload() {
     let [formData, setFormData] = useState({ title: "", description: "", file: null })
@@ -61,6 +62,11 @@ function VideoUpload() {
     }
     return (
         <div>
+            <Helmet>
+                <title>Upload Video - Video Streaming App</title>
+                <meta name="description" content="Upload your own video with different Categories and post and enhance you and show your work online" />
+            </Helmet>
+
             <ModelAlert openModal={openModal} setOpenModal={setOpenModal} modelMessage={modelMessage} previousLocation="/" emoji={"👍"} />
 
             <section className="flex justify-center m-8">

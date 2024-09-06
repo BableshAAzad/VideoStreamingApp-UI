@@ -1,4 +1,4 @@
-import { BASE_URL } from "../baseurl/BaseUrl"
+import { BASE_URL } from "../appconstants/BaseUrl"
 import "./HomePage.css"
 import { useContext, useEffect, useState } from "react"
 import axios from "axios"
@@ -6,6 +6,7 @@ import { AuthContext } from "../authprovider/AuthProvider"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Spinner from "../spinner/Spinner"
 import SidebarComp from "./sidebar/SidebarComp"
+import { Helmet } from "react-helmet"
 
 function HomePage() {
   let [videos, setVideos] = useState([])
@@ -13,8 +14,6 @@ function HomePage() {
   let [totalResults, setTotalResults] = useState(0);
   let [isLoading, setIsLoading] = useState(true)
   let { setProgress } = useContext(AuthContext)
-
-  document.title = "Video Streaming App"
 
   let getAllVideos = async () => {
     setIsLoading(true);
@@ -54,6 +53,10 @@ function HomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Video Streaming App</title>
+        <meta name="description" content="Enjoy videos, Upload your videos and start you own channel and your journy" />
+      </Helmet>
       <section>
         {isLoading && <Spinner />}
         <InfiniteScroll

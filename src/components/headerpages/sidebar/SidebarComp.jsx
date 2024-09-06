@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
-import { HiArrowSmRight, HiBookOpen, HiHome, HiTable, HiThumbUp, HiUserGroup } from "react-icons/hi";
+import { HiArrowSmRight, HiBookOpen, HiHome, HiTable, HiThumbUp, HiUserGroup, HiVideoCamera } from "react-icons/hi";
 import VideoPlayer from "../videos/VideoPlayer";
 import "./SidebarComp.css"
 import videoImage from "../../../images/video_pluse2.png"
 import PropTypes from "prop-types";
 import { HiComputerDesktop, HiPower } from "react-icons/hi2";
+import { GiGamepad } from "react-icons/gi";
 
 function SidebarComp({ videos }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -47,8 +48,14 @@ function SidebarComp({ videos }) {
                         <Sidebar.Item href="#" icon={HiComputerDesktop}>
                             Technology
                         </Sidebar.Item>
+                        <Sidebar.Item href="#" icon={GiGamepad}>
+                            Gaming
+                        </Sidebar.Item>
                         <Sidebar.Item href="#" icon={HiUserGroup}>
                             Children
+                        </Sidebar.Item>
+                        <Sidebar.Item href="#" icon={HiVideoCamera}>
+                            Other
                         </Sidebar.Item>
                         <Sidebar.Item href="#" icon={HiArrowSmRight}>
                             Sign In

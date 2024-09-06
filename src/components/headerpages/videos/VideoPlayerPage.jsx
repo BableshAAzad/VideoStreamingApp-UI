@@ -1,6 +1,6 @@
 // import { useParams } from 'react-router-dom';
 // import ReactPlayer from 'react-player';
-// import { BASE_URL } from '../../baseurl/BaseUrl';
+// import { BASE_URL } from '../../appconstants/BaseUrl';
 
 // function VideoPlayerPage() {
 //     let { videoId } = useParams();
