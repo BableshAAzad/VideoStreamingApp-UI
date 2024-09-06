@@ -1,0 +1,11 @@
+.drop-down-width > div > button{
+    width: 100%;
+}
+
+.drop-down-width > div > button > span{
+    color: blueviolet;
+}
+
+.dark .drop-down-width > div > button > span {
+    color: #ab3cff;
+}

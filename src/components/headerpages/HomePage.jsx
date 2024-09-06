@@ -6,7 +6,7 @@ import { AuthContext } from "../authprovider/AuthProvider"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Spinner from "../spinner/Spinner"
 import SidebarComp from "./sidebar/SidebarComp"
-import { Helmet } from "react-helmet"
+import { Helmet, HelmetProvider } from "react-helmet-async"
 
 function HomePage() {
   let [videos, setVideos] = useState([])
@@ -53,22 +53,24 @@ function HomePage() {
 
   return (
     <>
-      <Helmet>
-        <title>Video Streaming App</title>
-        <meta name="description" content="Enjoy videos, Upload your videos and start you own channel and your journy" />
-      </Helmet>
-      <section>
-        {isLoading && <Spinner />}
-        <InfiniteScroll
-          dataLength={videos.length}
-          next={fetchMoreVideos}
-          hasMore={videos.length !== totalResults}
-          loader={<Spinner />}
-          scrollableTarget="row"
-        >
-          <SidebarComp videos={videos} />
-        </InfiniteScroll>
-      </section>
+      <HelmetProvider>
+        <Helmet>
+          <title>Video Streaming App</title>
+          <meta name="description" content="Enjoy videos, Upload your videos and start you own channel and your journy" />
+        </Helmet>
+        <section>
+          {isLoading && <Spinner />}
+          <InfiniteScroll
+            dataLength={videos.length}
+            next={fetchMoreVideos}
+            hasMore={videos.length !== totalResults}
+            loader={<Spinner />}
+            scrollableTarget="row"
+          >
+            <SidebarComp videos={videos} />
+          </InfiniteScroll>
+        </section>
+      </HelmetProvider>
     </>
   )
 }

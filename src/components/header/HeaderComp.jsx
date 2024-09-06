@@ -8,6 +8,7 @@ import logo from "../../images/logo.png"
 import NetworkStatus from "../network/NetworkStatus"
 import { RiVideoUploadFill } from "react-icons/ri";
 import { useState } from "react";
+import SearchVideoModal from "../headerpages/searchvideos/SearchVideoModal";
 
 function HeaderComp() {
     const location = useLocation();
@@ -16,6 +17,7 @@ function HeaderComp() {
     document.title = "Video Streaming App"
 
     const handleSearchClick = () => {
+        setOpenModal(true);
     };
 
     return (
@@ -39,6 +41,7 @@ function HeaderComp() {
                             <FontAwesomeIcon icon={faSearch} className="mr-2" />
                             <span className="flex-grow">Search Videos...</span>
                         </div>
+                        <SearchVideoModal openModal={openModal} setOpenModal={setOpenModal} />
                     </div>
                 </div>
                 <Navbar.Collapse className="md:order-2">
@@ -46,7 +49,7 @@ function HeaderComp() {
                     <NavLink to="/video-upload" className="text-base" title="create">
                         <Navbar.Link active={location.pathname === "/video-upload"} as="div">
                             {/* <FontAwesomeIcon icon={faVideo} /> */}
-                            <RiVideoUploadFill className="text-2xl"/>
+                            <RiVideoUploadFill className="text-2xl" />
                         </Navbar.Link>
                     </NavLink>
 
