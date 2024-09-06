@@ -12,7 +12,7 @@ function VideoStream() {
             <section className="flex justify-center mb-8">
                 <video
                     style={{ width: "50rem" }}
-                    src={`${BASE_URL}videos/${videoId}/stream`} controls></video>
+                    src={`${BASE_URL}videos/${videoId}/stream/range`} controls></video>
             </section>
         </div>
     )
