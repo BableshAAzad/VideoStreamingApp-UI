@@ -5,6 +5,7 @@ import { Modal, Spinner, TextInput } from "flowbite-react";
 import { HiSearch, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 function SearchVideoModal({ openModal, setOpenModal }) {
     const [searchResults, setSearchResults] = useState([]);
     const [inputQuery, setInputQuery] = useState("");
@@ -13,10 +14,11 @@ function SearchVideoModal({ openModal, setOpenModal }) {
     const fetchSearchResults = async (query) => {
         setIsLoading(true);
         try {
-            const response = await axios.get(`${BASE_URL}videos?page=0&size=10`);
+            const response = await axios.get(`${BASE_URL}videos/search/${query}?page=0&size=10`);
             if (response.status === 200) {
                 return response.data.data;
             }
+            console.log(response)
         } catch (error) {
             console.error("Error fetching search results:", error);
         } finally {
@@ -39,7 +41,7 @@ function SearchVideoModal({ openModal, setOpenModal }) {
     }, [inputQuery]);
 
     return (
-        <Modal show={openModal} size="md" onClose={() => setOpenModal(false)}>
+        <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} className="logoColorSearchVideoModel">
             <div className="flex items-center gap-2 justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <TextInput
                     icon={HiSearch}
@@ -67,10 +69,10 @@ function SearchVideoModal({ openModal, setOpenModal }) {
                 )}
                 <div id="scrollable-container">
                     <ul className="my-1 space-y-3">
-                        {searchResults.map(({ videoId, title, description, category }) => (
+                        {searchResults.map(({ videoId, title, description }) => (
                             <li key={videoId}>
                                 <Link
-                                    to={`/products/${videoId}`}
+                                    to={`/video-player-page/${videoId}`}
                                     onClick={() => {
                                         setOpenModal(false);
                                         setInputQuery("");
