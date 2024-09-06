@@ -59,8 +59,8 @@ function HeaderComp() {
                         </Navbar.Link>
                     </NavLink>
 
-                    <div className='navbtn mt-auto mb-auto dark:text-slate-400 hover:dark:text-slate-100'>
-                        <Navbar.Link className='ml-[-12px]' as="div">
+                    <div className='navbtn mt-auto mb-auto dark:text-slate-400 hover:dark:text-slate-100 '>
+                        <Navbar.Link className='ml-[-3px]' as="div">
                             <DarkModeOption />
                         </Navbar.Link>
                     </div>
