@@ -33,8 +33,12 @@ function VideoPlayerPage() {
 
     return (
         <section className="flex justify-center items-center m-5">
-            <div className="cardShadowVideoPlayer">
-                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <div className="cardShadowVideoPlayer sm:w-full lg:w-[70%] ">
+                <div style={{
+                    position: 'relative',
+                    // width: '100%',
+                    // height: '100%'
+                }}>
                     <ReactPlayer
                         className="rounded-lg"
                         ref={playerRef}
